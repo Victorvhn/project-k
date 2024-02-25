@@ -1,0 +1,109 @@
+{
+    "id": "1",
+    "theme_color": "#27272A",
+    "background_color": "#27272A",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Project K",
+    "short_name": "Project K",
+    "defaultLanguage": "en",
+    "availableLanguages": [ "en", "pt-BR" ],
+    "author": "Victor Hugo do Nascimento",
+    "description": "A system aimed at recording financial transactions.",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+          "src": "/icons/icon-256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+          "src": "/icons/icon-384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+          "src": "/icons/icon-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "/icons/maskable-192.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "maskable"
+        },
+        {
+          "src": "/icons/maskable-256.png",
+          "sizes": "256x256",
+          "type": "image/png",
+          "purpose": "maskable"
+        },
+        {
+          "src": "/icons/maskable-384.png",
+          "sizes": "384x384",
+          "type": "image/png",
+          "purpose": "maskable"
+        },
+        {
+          "src": "/icons/maskable-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+      {
+        "src": "/screenshots/desktop-home.png",
+        "sizes": "2558x1294",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Home screen"
+      },
+      {
+        "src": "/screenshots/desktop-add-transaction.png",
+        "sizes": "2558x1294",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Create transaction page"
+      },
+      {
+        "src": "/screenshots/desktop-delete-planned-transaction.png",
+        "sizes": "2558x1294",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Delete planned transaction dialog"
+      },
+      {
+        "src": "/screenshots/mobile-home.png",
+        "sizes": "388x843",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Home screen"
+      },
+      {
+        "src": "/screenshots/mobile-add-transaction.png",
+        "sizes": "388x843",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Create transaction page"
+      },
+      {
+        "src": "/screenshots/mobile-delete-planned-transaction.png",
+        "sizes": "388x843",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Delete planned transaction drawer"
+      }
+    ]
+}
