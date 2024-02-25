@@ -18,6 +18,9 @@ namespace ProjectK.Api.Dtos.v1.PlannedTransactions.Responses;
 ///     Identifies if the provided data is from a planned transaction or from
 ///     a custom planned transactions.
 /// </param>
+/// <param name="IsThereAnyCustomPlannedTransaction">
+///     Identifies if there is any custom planned transaction for this planned transaction.
+/// </param>
 public record PlannedTransactionDto(
     Ulid Id,
     string Description,

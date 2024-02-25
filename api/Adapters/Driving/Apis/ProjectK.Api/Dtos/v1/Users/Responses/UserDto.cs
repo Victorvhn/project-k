@@ -8,6 +8,7 @@ namespace ProjectK.Api.Dtos.v1.Users.Responses;
 /// <param name="Id">The unique identifier of the user.</param>
 /// <param name="Name">The name of the user.</param>
 /// <param name="Email">The email address of the user.</param>
+/// <param name="Currency">User's currency.</param>
 public record UserDto(
     Ulid Id,
     string Name,
