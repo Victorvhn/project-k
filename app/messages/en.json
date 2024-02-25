@@ -1,0 +1,355 @@
+{
+  "Metadata": {
+    "Title": "Project K",
+    "Description": "A system aimed at recording financial transactions.",
+    "Dashboard": {
+      "Title": "Project K - Dashboard"
+    },
+    "Transactions":{
+      "Add": {
+        "Title": "Project K - Create transaction"
+      },
+      "Edit": {
+        "Title": "Project K - Edit transaction"
+      }
+    },
+    "PlannedTransactions":{
+      "Add": {
+        "Title": "Project K - Create planned transaction"
+      },
+      "Edit": {
+        "Title": "Project K - Edit planned transaction"
+      }
+    },
+    "Categories":{
+      "List": {
+        "Title": "Project K - Categories"
+      },
+      "Add": {
+        "Title": "Project K - Create category"
+      },
+      "Edit": {
+        "Title": "Project K - Edit category"
+      }
+    },
+    "SignIn": {
+      "Title": "Project K - Sign in"
+    },
+    "ServerStatus": {
+      "Title": "Project K - Server status"
+    }
+  },
+  "Pages": {
+    "ServerStatus": {
+      "Title": "Server status",
+      "Healthy": "All Systems Operational",
+      "Degraded": "Warning: Some Systems Down",
+      "Unhealthy": "Some Systems Down",
+      "BackToHome": "Back to home"
+    },
+    "SignIn": {
+      "Greeting": "Welcome back!",
+      "Components": {
+        "Error": {
+          "Title": "Something went wrong while trying to sign in",
+          "Description": "Please check the server status page to see if everything is working properly. If the problem persists, please contact the system administrator.",
+          "CheckServerStatus": "Check server status",
+          "Cancel": "Cancel"
+        }
+      }
+    },
+    "Dashboard": {
+      "Title": "Dashboard",
+      "MonthlySummary": {
+        "ExpensesTitle": "Total expenses",
+        "ExpensesPercentage": "Expenses are {percentage} {difference, select, 0 {as the} other {compared to the}} planned budget.",
+        "IncomeTitle": "Total revenue",
+        "IncomePercentage": "Revenue is {percentage} {difference, select, 0 {as} other {compared to the}} planned.",
+        "BudgetMessage": "Your budget is {budget}."
+      },
+      "PlanedTransactionsList": {
+        "Title": "Planned transactions",
+        "Description": "You have {count, plural, =0 {not planned any transactions} =1 {planned one transaction} other {planned # transactions}} for this month.",
+        "CreateTransactionButtonDescription": "Create new planned transaction",
+        "CreateTransactionLinkDescription": "Go to add planned transaction page",
+        "ClickableBadge": {
+          "Paid": "Paid",
+          "Pending": "Pending",
+          "SuccessPaying": "Planned transaction paid successfully.",
+          "SuccessCancelling": "Transaction payment canceled successfully.",
+          "Pay": "Pay planned transaction",
+          "Receive": "Receive planned transaction",
+          "Cancel": "Cancel planned transaction payment",
+          "Amount": "Amount",
+          "ReceiveDialogDescription": "Enter the amount you received for this transaction.",
+          "PayDialogDescription": "Enter the amount you paid for this transaction.",
+          "Conclude": "Conclude",
+          "Validations": {
+            "AmountRequired": "Amount must be provided.",
+            "AmountPositive": "Amount must be greater than zero."
+          }
+        },
+        "DeleteButton": {
+          "Title": "Delete planned transaction",
+          "Description": "Choose the type of deletion you want to proceed (This operation cannot be undone):",
+          "All": "All",
+          "JustOne": "Just this one",
+          "FromNowOn": "All from now on",
+          "Tooltip": "Delete planned transaction",
+          "SuccessDeleting": "Planned transaction deleted successfully.",
+          "Deleting": "Deleting planned transaction...",
+          "Cancel": "Cancel"
+        },
+        "EditButton": {
+          "Title": "Edit planned transaction",
+          "Description": "Choose the type of update you want to proceed:",
+          "Tooltip": "Edit planned transaction",
+          "All": "All",
+          "JustOne": "Just this one",
+          "FromNowOn": "All from now on",
+          "EditPlannedTransactionButtonDescription": "Edit planned transaction",
+          "EditAllPlannedTransactionLinkDescription": "Edit all planned transactions",
+          "EditJustOnePlannedTransactionLinkDescription": "Edit just this planned transaction",
+          "EditFromNowOnPlannedTransactionLinkDescription": "Edit all planned transactions from now on"
+        },
+        "Nothing": "You have not planned any transactions for this month yet."
+      },
+      "TransactionsList": {
+        "Title": "Transactions",
+        "Description": "You {count, plural, =0 {have not made any transactions} =1 {have made one transaction} other {have made # transactions}} this month.",
+        "DeleteButton": {
+          "Title": "Delete transaction",
+          "Description": "Are you sure you want to delete this transaction? (This operation cannot be undone)",
+          "Delete": "Yes, delete it",
+          "Tooltip": "Delete transaction",
+          "Deleting": "Deleting transaction..."
+        },
+        "EditButton": {
+          "Tooltip": "Edit transaction"
+        },
+        "Nothing": "You have not made any transactions for this month yet."
+      },
+      "MonthlyCharts": {
+        "Title": "Your Month in Detail: Planned vs. Spent by Category",
+        "Description": "See how your expenses in each category align with the planned budget.",
+        "Current": "Current",
+        "Planned": "Planned",
+        "Nothing": "Nothing to show here yet."
+     }
+    },
+    "Categories": {
+      "List": {
+        "Title": "List of Categories",
+        "CreateNew": "Create new category",
+        "DataTable": {
+          "Name": "Name",
+          "Color": "Color",
+          "Actions": "Actions",
+          "NoData": "No categories found."
+        },
+        "DeleteButton": {
+          "Title": "Delete category",
+          "Description": "Are you sure you want to delete this category? (This operation cannot be undone)",
+          "Delete": "Yes, delete it",
+          "Deleting": "Deleting category...",
+          "ToastSuccessTitle": "Success!",
+          "ToastSuccessDescription": "The category was deleted successfully."
+        }
+      },
+      "Add": {
+        "Title": "New category",
+        "Description": "Create a new category to classify your transactions."
+      },
+      "Edit": {
+        "Title": "Edit category",
+        "Description": "Edit to fix any mistakes or update the category information."
+      },
+      "Form": {
+        "Name": "Name",
+        "NamePlaceholder": "Enter the category name",
+        "Color": "Color",
+        "ColorPlaceholder": "Select the category color",
+        "Create": "Create",
+        "Update": "Update",
+        "Validations": {
+          "NameRequired": "Name is required.",
+          "NameMinLength": "Name must contain at least 2 characters.",
+          "NameMaxLength": "Name must contain at most 50 characters.",
+          "ColorRequired": "Color is required."
+        },
+        "ToastSuccessTitle": "Success!",
+        "ToastSuccessCreate": "The category {name} was created successfully.",
+        "ToastSuccessUpdate": "The category {name} was updated successfully."
+      }
+    },
+    "Transactions": {
+      "Add": {
+        "Title": "New transaction",
+        "Description": "Register a new transaction to keep track of your financial activities.",
+        "Success": "Transaction created successfully."
+      },
+      "Edit": {
+        "Title": "Edit transaction",
+        "Description": "Edit to fix any mistakes or update the transaction information.",
+        "Success": "Transaction edited successfully."
+      },
+      "Components": {
+        "PlannedTransactionCombo": {
+          "DefaultMessage": "Select planned transaction",
+          "EmptyMessage": "No planned transaction found.",
+          "SearchMessage": "Search..."
+        }
+      },
+      "Form": {
+        "PlannedTransaction": "Planned transaction",
+        "Description": "Description",
+        "Amount": "Amount",
+        "Type": "Type",
+        "Income": "Income",
+        "Expense": "Expense",
+        "Category": "Category",
+        "Paid at": "Paid at",
+        "Select date": "Select date",
+        "Create": "Create",
+        "Edit": "Update",
+        "Validations": {
+          "InvalidPlannedTransaction": "Invalid planned transaction.",
+          "DescriptionMinLength": "Description must contain at least 2 characters.",
+          "DescriptionMaxLength": "Description must contain at most 150 characters.",
+          "AmountRequired": "Amount must be provided.",
+          "AmountPositive": "Amount must be greater than zero.",
+          "InvalidCategory": "Invalid category.",
+          "TypeRequired": "Type is required.",
+          "PaidAtRequired": "Payment date is required."
+        }
+      }
+    },
+    "PlannedTransactions": {
+      "Add": {
+        "Title": "New planned transaction",
+        "Description": "Register a new planned transaction to keep track of your financial activities.",
+        "Success": "Planned transaction created successfully."
+      },
+      "Edit": {
+        "Title": "Edit planned transaction",
+        "Description": "Edit to fix any mistakes or update the planned transaction information.",
+        "Success": "Planned transaction edited successfully."
+      },
+      "Form": {
+        "Description": "Description",
+        "Amount": "Amount",
+        "Type": "Type",
+        "Income": "Income",
+        "Expense": "Expense",
+        "AmountType": "Amount type",
+        "Fixed": "Fixed",
+        "Variable": "Variable",
+        "Recurrence": "Recurrence",
+        "Monthly": "Monthly",
+        "Annual": "Annual",
+        "Category": "Category",
+        "StartsAt": "Starts at",
+        "EndsAt": "Ends at",
+        "Select date": "Select date",
+        "Create": "Create",
+        "Edit": "Update",
+        "Validations": {
+          "DescriptionMinLength": "Description must contain at least 2 characters.",
+          "DescriptionMaxLength": "Description must contain at most 150 characters.",
+          "AmountRequired": "Amount must be provided.",
+          "AmountPositive": "Amount must be greater than zero.",
+          "InvalidCategory": "Invalid category.",
+          "AmountTypeRequired": "Amount type is required.",
+          "TypeRequired": "Type is required.",
+          "RecurrenceRequired": "Recurrence is required.",
+          "StartsAtRequired": "Start date is required."
+        }
+      }
+    },
+    "Error": {
+      "Title": "Something went wrong!",
+      "TryAgain": "Try again"
+    }
+  },
+  "Components": {
+    "ThemeSwitch": {
+      "Title": "Select the theme",
+      "System": "System default",
+      "Light": "Light",
+      "Dark": "Dark"
+    },
+    "LanguageSwitch": {
+      "Title": "Select the language",
+      "English": "English",
+      "Portuguese": "Portuguese"
+    },
+    "SignOutButton": {
+      "Tooltip": "Sign out"
+    },
+    "SignInButton": {
+      "Message": "Sign in with {provider}"
+    },
+    "GithubProfileLink": {
+      "ButtonDescription": "Visit the project owner's GitHub page"
+    },
+    "MonthPicker": {
+      "DefaultMessage": "Pick a date",
+      "PreviousMonth": "Previous month",
+      "CurrentMonth": "Current month",
+      "NextMonth": "Next month",
+      "Months": {
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December"
+      }
+    },
+    "CategoryCombo": {
+      "DefaultMessage": "Select category",
+      "EmptyMessage": "No category found.",
+      "SearchMessage": "Search...",
+      "CreateTooltip": "Create new category"
+    },
+    "DefaultError": {
+      "Title": "Something went wrong!",
+      "Description": "We found a problem processing your request. Please try again later.",
+      "ServerError": "Server error: {error}"
+    },
+    "Sidebar": {
+      "Dashboard": "Dashboard",
+      "Categories": "Categories list"
+    },
+    "CurrencySwitch": {
+      "Title": "Select the currency",
+      "BRL": "Brazilian Real",
+      "USD": "Dollar",
+      "Changing": "Changing..."
+    },
+    "DeleteAccountButton": {
+      "DeleteAccount": "Delete account",
+      "Title": "Delete account",
+      "Description": "Are you sure you want to delete your account? All your data will be lost. (This operation cannot be undone).",
+      "Yes": "Yes, delete it",
+      "Cancel": "No, i changed my mind",
+      "Deleting": "Deleting account..."
+    }
+  },
+  "Shared": {
+    "ApiCallError": {
+      "Title": "Something went wrong!",
+      "ErrorMessage": "Error: {error}"
+    },
+    "Success": "Success!",
+    "Error": "Error!",
+    "Loading": "Loading...",
+    "Cancel": "Cancel"
+  }
+}

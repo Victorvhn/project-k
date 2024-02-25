@@ -1,0 +1,355 @@
+{
+  "Metadata": {
+    "Title": "Projeto K",
+    "Description": "Um sistema com o objetivo de registrar as movimentações financeiras.",
+    "Dashboard": {
+      "Title": "Projeto K - Painel"
+    },
+    "Transactions":{
+      "Add": {
+        "Title": "Projeto K - Criar transação"
+      },
+      "Edit": {
+        "Title": "Projeto K - Editar transação"
+      }
+    },
+    "PlannedTransactions":{
+      "Add": {
+        "Title": "Projeto K - Criar transação planjeada"
+      },
+      "Edit": {
+        "Title": "Projeto K - Editar transação planjeada"
+      }
+    },
+    "Categories":{
+      "List": {
+        "Title": "Projeto K - Categorias"
+      },
+      "Add": {
+        "Title": "Projeto K - Criar categoria"
+      },
+      "Edit": {
+        "Title": "Projeto K - Editar categoria"
+      }
+    },
+    "SignIn": {
+      "Title": "Projeto K - Entrar"
+    },
+    "ServerStatus": {
+      "Title": "Projeto K - Status do servidor"
+    }
+  },
+  "Pages": {
+    "ServerStatus": {
+      "Title": "Status do servidor",
+      "Healthy": "Todos os sistemas operacionais",
+      "Degraded": "Aviso: alguns sistemas estão inativos",
+      "Unhealthy": "Alguns sistemas estão inativos",
+      "BackToHome": "Voltar para a página inicial"
+    },
+    "SignIn": {
+      "Greeting": "Bem vindo de volta!",
+      "Components": {
+        "Error": {
+          "Title": "Algo deu errado ao tentar entrar",
+          "Description": "Verifique a página de status do servidor para ver se tudo está funcionando corretamente. Se o problema persistir, entre em contato com o administrador do sistema.",
+          "CheckServerStatus": "Verificar status do servidor",
+          "Cancel": "Cancelar"
+        }
+      }
+    },
+    "Dashboard": {
+      "Title": "Painel",
+      "MonthlySummary": {
+        "ExpensesTitle": "Total de despesas",
+        "ExpensesPercentage": "Despesas estão {percentage} {difference, select, 0 {de acordo com o} other {em comparação ao}} planejado.",
+        "IncomeTitle": "Total de receita",
+        "IncomePercentage": "Sua receita está {percentage} {difference, select, 0 {de acordo com o} other {em comparação ao}} planejado.",
+        "BudgetMessage": "Seu planejamento é de {budget}."
+      },
+      "PlanedTransactionsList": {
+        "Title": "Transações planejadas",
+        "Description": "Você {count, plural, =0 {não planejou transações} =1 {planejou uma transação} other {planejou # transações}} para este mês.",
+        "CreateTransactionButtonDescription": "Criar nova transação planejada",
+        "CreateTransactionLinkDescription": "Ir para pagina de criação de transação planejada",
+        "ClickableBadge": {
+          "Paid": "Paga",
+          "Pending": "Pendente",
+          "SuccessPaying": "Transação planejada paga com sucesso.",
+          "SuccessCancelling": "Pagamento da transação cancelado com sucesso.",
+          "Pay": "Pagar transação planejada",
+          "Receive": "Receber transação planejada",
+          "Cancel": "Cancelar pagamento da transação planejada",
+          "Amount": "Valor",
+          "ReceiveDialogDescription": "Informe o valor que foi recebido para essa transação.",
+          "PayDialogDescription": "Informe o valor que foi pago para essa transação.",
+          "Conclude": "Concluir",
+          "Validations": {
+            "AmountRequired": "Valor é obrigatório.",
+            "AmountPositive": "Valor deve ser maior que zero."
+          }
+        },
+        "DeleteButton": {
+          "Title": "Excluir transação planejada",
+          "Description": "Escolha o tipo de exclusão que você deseja prosseguir:",
+          "All": "Todas",
+          "JustOne": "Apenas essa",
+          "FromNowOn": "Todas a partir de agora",
+          "Tooltip": "Excluir transação planejada",
+          "SuccessDeleting": "Transação planejada excluída com sucesso.",
+          "Deleting": "Excluindo transação planejada...",
+          "Cancel": "Cancelar"
+        },
+        "EditButton": {
+          "Title": "Editar transação planejada",
+          "Description": "Escolha o tipo de atualização que você deseja realizar:",
+          "Tooltip": "Editar transação planejada",
+          "All": "Todas",
+          "JustOne": "Apenas essa",
+          "FromNowOn": "Todas a partir de agora",
+          "EditPlannedTransactionButtonDescription": "Editar transação planejada",
+          "EditAllPlannedTransactionLinkDescription": "Editar todas as transações planejadas",
+          "EditJustOnePlannedTransactionLinkDescription": "Editar apenas essa transação planejada",
+          "EditFromNowOnPlannedTransactionLinkDescription": "Editar todas as transações planejadas a partir de agora"
+        },
+        "Nothing": "Você ainda não planejou transações para este mês."
+      },
+      "TransactionsList": {
+        "Title": "Transações",
+        "Description": "Você {count, plural, =0 {não efetuou transações} =1 {efetuou uma transação} other {efetuou # transações}} este mês.",
+        "DeleteButton": {
+          "Title": "Excluir transação",
+          "Description": "Você tem certeza que deseja excluir essa transação? (Essa ação não pode ser desfeita)",
+          "Delete": "Sim, excluir",
+          "Tooltip": "Excluir transação",
+          "Deleting": "Excluindo transação..."
+        },
+        "EditButton": {
+          "Tooltip": "Editar transação"
+        },
+        "Nothing": "Você ainda não efetuou transações este mês."
+      },
+      "MonthlyCharts": {
+        "Title": "Seu Mês em Detalhe: Planejado x Gasto por Categoria",
+        "Description": "Veja como suas despesas em cada categoria se alinham com o orçamento planejado.",
+        "Current": "Atual",
+        "Planned": "Planejado",
+        "Nothing": "Nada para mostrar aqui ainda."
+      }
+    },
+    "Categories": {
+      "List": {
+        "Title": "Lista de categorias",
+        "CreateNew": "Criar nova categoria",
+        "DataTable": {
+          "Name": "Nome",
+          "Color": "Cor",
+          "Actions": "Ações",
+          "NoData": "Nenhuma categoria encontrada."
+        },
+        "DeleteButton": {
+          "Title": "Excluir categoria",
+          "Description": "Você tem certeza que deseja excluir essa categoria? (Essa ação não pode ser desfeita)",
+          "Delete": "Sim, excluir",
+          "Deleting": "Excluindo categoria...",
+          "ToastSuccessTitle": "Sucesso!",
+          "ToastSuccessDescription": "A categoria foi excluída com sucesso."
+        }
+      },
+      "Add": {
+        "Title": "Nova categoria",
+        "Description": "Crie uma nova categoria para organizar suas transações."
+      },
+      "Edit": {
+        "Title": "Editar categoria",
+        "Description": "Edite uma categoria para corrigir ou atualizar informações."
+      },
+      "Form": {
+        "Name": "Nome",
+        "NamePlaceholder": "Digite o nome da categoria",
+        "Color": "Cor",
+        "ColorPlaceholder": "Selecione uma cor para a categoria",
+        "Create": "Criar",
+        "Update": "Salvar",
+        "Validations": {
+          "NameRequired": "Nome é obrigatório.",
+          "NameMinLength": "Nome deve conter no mínimo 2 caracteres.",
+          "NameMaxLength": "Nome deve conter no máximo 50 caracteres.",
+          "ColorRequired": "Cor é obrigatória."
+        },
+        "ToastSuccessTitle": "Sucesso!",
+        "ToastSuccessCreate": "A categoria {name} foi criada com sucesso.",
+        "ToastSuccessUpdate": "A categoria {name} foi atualizada com sucesso."
+      }
+    },
+    "Transactions": {
+      "Add": {
+        "Title": "Nova transação",
+        "Description": "Crie uma nova transação para registrar suas movimentações financeiras.",
+        "Success": "Transação criada com sucesso."
+      },
+      "Edit": {
+        "Title": "Editar transação",
+        "Description": "Edite uma transação para corrigir ou atualizar informações.",
+        "Success": "Transação atualizada com sucesso."
+      },
+      "Components": {
+        "PlannedTransactionCombo": {
+          "DefaultMessage": "Selecione uma transação planejada",
+          "EmptyMessage": "Nenhuma transação planejada encontrada.",
+          "SearchMessage": "Buscar..."
+        }
+      },
+      "Form": {
+        "PlannedTransaction": "Transação planejada",
+        "Description": "Descrição",
+        "Amount": "Valor",
+        "Type": "Tipo",
+        "Income": "Renda",
+        "Expense": "Despesa",
+        "Category": "Categoria",
+        "Paid at": "Data de pagamento",
+        "Select date": "Selecione uma data",
+        "Create": "Criar",
+        "Edit": "Atualizar",
+        "Validations": {
+          "InvalidPlannedTransaction": "Transação planejada inválida.",
+          "DescriptionMinLength": "Descrição deve conter no mínimo 2 caracteres",
+          "DescriptionMaxLength": "Descrição deve conter no máximo 150 caracteres.",
+          "AmountRequired": "Valor é obrigatório.",
+          "AmountPositive": "Valor deve ser maior que zero.",
+          "InvalidCategory": "Categoria inválida.",
+          "TypeRequired": "Tipo é obrigatório.",
+          "PaidAtRequired": "Data de pagamento é obrigatória."
+        }
+      }
+    },
+    "PlannedTransactions": {
+      "Add": {
+        "Title": "Nova transação planejada",
+        "Description": "Crie uma nova transação planejada para planejar suas movimentações financeiras.",
+        "Success": "Transação planejada criada com sucesso."
+      },
+      "Edit": {
+        "Title": "Editar transação planejada",
+        "Description": "Edite uma transação planejada para corrigir ou atualizar informações.",
+        "Success": "Transação planejada atualizada com sucesso."
+      },
+      "Form": {
+        "Description": "Descrição",
+        "Amount": "Valor",
+        "Type": "Tipo",
+        "Income": "Renda",
+        "Expense": "Despesa",
+        "AmountType": "Tipo do valor",
+        "Fixed": "Fixo",
+        "Variable": "Variável",
+        "Recurrence": "Recorrência do pagamento",
+        "Monthly": "Mensal",
+        "Annual": "Anual",
+        "Category": "Categoria",
+        "StartsAt": "Data de início",
+        "EndsAt": "Data de término",
+        "Select date": "Selecione uma data",
+        "Create": "Criar",
+        "Edit": "Atualizar",
+        "Validations": {
+          "DescriptionMinLength": "Descrição deve conter no mínimo 2 caracteres",
+          "DescriptionMaxLength": "Descrição deve conter no máximo 150 caracteres.",
+          "AmountRequired": "Valor é obrigatório.",
+          "AmountPositive": "Valor deve ser maior que zero.",
+          "InvalidCategory": "Categoria inválida.",
+          "AmountTypeRequired": "Tipo do valor é obrigatório.",
+          "TypeRequired": "Tipo é obrigatório.",
+          "RecurrenceRequired": "Recorrência é obrigatória.",
+          "StartsAtRequired": "Data de início é obrigatória."
+        }
+      }
+    },
+    "Error": {
+      "Title": "Algo deu errado!",
+      "TryAgain": "Tente novamente"
+    }
+  },
+  "Components": {
+    "ThemeSwitch": {
+      "Title": "Selecione o tema",
+      "System": "Padrão do sistema",
+      "Light": "Claro",
+      "Dark": "Escuro"
+    },
+    "LanguageSwitch": {
+      "Title": "Selecione o idioma",
+      "English": "Inglês",
+      "Portuguese": "Português"
+    },
+    "SignOutButton": {
+      "Tooltip": "Encerrar sessão"
+    },
+    "SignInButton": {
+      "Message": "Entrar com {provider}"
+    },
+    "GithubProfileLink": {
+      "ButtonDescription": "Visite o repositório do criador do projeto no Github"
+    },
+    "MonthPicker": {
+      "DefaultMessage": "Selecione um mês",
+      "PreviousMonth": "Mês anterior",
+      "CurrentMonth": "Mês atual",
+      "NextMonth": "Próximo mês",
+      "Months": {
+        "January": "Janeiro",
+        "February": "Fevereiro",
+        "March": "Março",
+        "April": "Abril",
+        "May": "Maio",
+        "June": "Junho",
+        "July": "Julho",
+        "August": "Agosto",
+        "September": "Setembro",
+        "October": "Outubro",
+        "November": "Novembro",
+        "December": "Dezembro"
+      }
+    },
+    "CategoryCombo": {
+      "DefaultMessage": "Selecione uma categoria",
+      "SearchMessage": "Buscar...",
+      "EmptyMessage": "Nenhuma categoria encontrada.",
+      "CreateTooltip": "Criar categoria"
+    },
+    "DefaultError": {
+      "Title": "Algo deu errado!",
+      "Description": "Encontramos um problema ao processar sua solicitação. Por favor, tente novamente mais tarde.",
+      "ServerError": "Erro do servidor: {error}"
+    },
+    "Sidebar": {
+      "Dashboard": "Painel",
+      "Categories": "Lista de categorias"
+    },
+    "CurrencySwitch": {
+      "Title": "Selecione a moeda",
+      "BRL": "Real",
+      "USD": "Dólar",
+      "Changing": "Alterando..."
+    },
+    "DeleteAccountButton": {
+      "DeleteAccount": "Excluir conta",
+      "Title": "Excluir conta",
+      "Description": "Tem certeza de que deseja excluir sua conta? Todos os seus dados serão perdidos. (Esta operação não pode ser desfeita).",
+      "Yes": "Sim, excluir",
+      "Cancel": "Não, eu mudei de ideia",
+      "Deleting": "Excluindo conta..."
+    }
+  },
+  "Shared": {
+    "ApiCallError": {
+      "Title": "Algo deu errado!",
+      "ErrorMessage": "Erro: {error}"
+    },
+    "Success": "Sucesso!",
+    "Error": "Erro!",
+    "Loading": "Carregando...",
+    "Cancel": "Cancelar"
+  }
+}

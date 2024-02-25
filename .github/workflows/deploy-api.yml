@@ -1,0 +1,94 @@
+name: Deploy API
+
+env:
+    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - api/**
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+      - name: Install report generator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      - name: Install dependencies
+        run: dotnet restore "api/Adapters/Driving/Apis/ProjectK.Api/ProjectK.Api.csproj"
+      - name: Build project
+        run: dotnet build "api/Adapters/Driving/Apis/ProjectK.Api/ProjectK.Api.csproj"
+      - name: Run tests
+        run: dotnet test "api" --results-directory "api/TestResults" --collect:"XPlat Code Coverage"
+      - name: Generate cove coverage report
+        run: reportgenerator -reports:"api/TestResults/**/coverage.cobertura.xml" -targetdir:"api/coveragereport" -reporttypes:Html
+      - name: Publish test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoverageReport
+          path: api/coveragereport
+        if: ${{ always() }}
+  
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: 'Staging'
+    needs: build-and-test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Heroku
+        run: heroku container:login
+
+      - name: Build and push Docker image
+        run: | 
+          cd api
+          heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+
+      - name: Release version
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+
+  deploy-production:
+    runs-on: 'ubuntu-latest'
+    environment: 'Production'
+    needs: deploy-staging
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Heroku
+        run: heroku container:login
+
+      - name: Build and push Docker image
+        run: | 
+          cd api
+          heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+
+      - name: Release version
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+
+  open-pr-to-main:
+    runs-on: 'ubuntu-latest'
+    needs: deploy-production
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+    
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'main'
+          title: Automatic pull request
+          assignee: ${{ github.actor }}
+          label: automatic
+          get_diff: true
