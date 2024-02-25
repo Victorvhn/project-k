@@ -67,3 +67,11 @@ cd project-k/app && pnpm install
 ```bash
 pnpm dev
 ```
+
+## Links
+[Staging Swagger](https://staging-api.project-k.tech/swagger/index.html)
+
+[Staging APP](https://staging-app.project-k.tech)
+
+
+[Production APP](https://www.project-k.tech)
