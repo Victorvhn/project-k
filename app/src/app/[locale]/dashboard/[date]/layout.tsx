@@ -3,6 +3,30 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { MonthPicker } from '@/components/month-picker';
 import { Params } from '@/types';
 
+export const dynamicParams = true;
+
+export function generateStaticParams() {
+  const availableMonths = [];
+  for (let index = 1; index <= 12; index++) {
+    availableMonths.push(index.toString().padStart(2, '0'));
+  }
+
+  const yearNow = new Date().getFullYear();
+  const availableYears = [];
+  for (let index = yearNow - 5; index < yearNow + 10; index++) {
+    availableYears.push(index);
+  }
+
+  const params = [];
+  for (const year of availableYears) {
+    for (const month of availableMonths) {
+      params.push({ date: `${year}-${month}` });
+    }
+  }
+
+  return params;
+}
+
 export default async function DashboardLayout({
   children,
   params: { locale },
