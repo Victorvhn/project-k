@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import './globals.css';
 
 // Since we have a root `not-found.tsx` page, a layout file
@@ -7,5 +9,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <Analytics />
+      {children}
+    </>
+  );
 }
