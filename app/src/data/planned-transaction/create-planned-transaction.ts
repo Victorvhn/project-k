@@ -32,6 +32,10 @@ export function useCreatePlannedTransaction(monthlyRequest: MonthlyRequest) {
           },
         ],
         (old: MonthlyPlannedTransactionDto[] | undefined) => {
+          if (!old) {
+            return undefined;
+          }
+
           const created: MonthlyPlannedTransactionDto = {
             id: result.id,
             description: result.description,
@@ -50,22 +54,28 @@ export function useCreatePlannedTransaction(monthlyRequest: MonthlyRequest) {
             isChanging: true,
           };
 
-          if (!old) {
-            return [created];
-          }
-
           const resultStartsAt = parseISO(result.startsAt.toLocaleString());
+          let added = false;
 
-          const idx = old.findIndex((transaction) => {
-            const paidAt = parseISO(transaction.startsAt.toLocaleString());
-            const compare = compareAsc(paidAt, resultStartsAt);
+          return [
+            ...old.map((plannedTransaction) => {
+              if (added) {
+                return plannedTransaction;
+              }
 
-            return compare !== 1;
-          });
+              const startsAt = parseISO(
+                plannedTransaction.startsAt.toLocaleString()
+              );
+              const compare = compareAsc(startsAt, resultStartsAt);
 
-          old.splice(idx, 0, created);
-
-          return old;
+              if (compare === -1) {
+                return plannedTransaction;
+              } else {
+                added = true;
+                return created;
+              }
+            }),
+          ];
         }
       );
 
