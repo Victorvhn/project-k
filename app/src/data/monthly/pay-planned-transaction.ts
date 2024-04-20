@@ -79,10 +79,6 @@ export function usePayPlannedTransaction() {
           },
         ],
         (old: MonthlyTransactionDto[] | undefined) => {
-          if (!old) {
-            return undefined;
-          }
-
           const paidDate = new Date(
             variables.monthlyRequest.year,
             variables.monthlyRequest.month - 1,
@@ -100,25 +96,20 @@ export function usePayPlannedTransaction() {
             isChanging: true,
           };
 
-          let added = false;
+          if (!old) {
+            return [created];
+          }
 
-          return [
-            ...old.map((transaction) => {
-              if (added) {
-                return transaction;
-              }
+          const idx = old.findIndex((transaction) => {
+            const paidAt = parseISO(transaction.paidAt.toLocaleString());
+            const compare = compareAsc(paidAt, paidDate);
 
-              const paidAt = parseISO(transaction.paidAt.toLocaleString());
-              const compare = compareAsc(paidAt, paidDate);
+            return compare !== 1;
+          });
 
-              if (compare === 1) {
-                return transaction;
-              } else {
-                added = true;
-                return created;
-              }
-            }),
-          ];
+          old.splice(idx, 0, created)
+
+          return old;
         }
       );
 

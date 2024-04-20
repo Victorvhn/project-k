@@ -35,10 +35,6 @@ export function useCreateTransaction(monthlyRequest: MonthlyRequest) {
           },
         ],
         (old: MonthlyTransactionDto[] | undefined) => {
-          if (!old) {
-            return undefined;
-          }
-
           const created: MonthlyTransactionDto = {
             id: result.id,
             description: result.description,
@@ -50,26 +46,22 @@ export function useCreateTransaction(monthlyRequest: MonthlyRequest) {
             isChanging: true,
           };
 
+          if (!old) {
+            return [created];
+          }
+
           const resultPaidAt = parseISO(result.paidAt.toLocaleString());
-          let added = false;
 
-          return [
-            ...old.map((transaction) => {
-              if (added) {
-                return transaction;
-              }
+          const idx = old.findIndex((transaction) => {
+            const paidAt = parseISO(transaction.paidAt.toLocaleString());
+            const compare = compareAsc(paidAt, resultPaidAt);
 
-              const paidAt = parseISO(transaction.paidAt.toLocaleString());
-              const compare = compareAsc(paidAt, resultPaidAt);
+            return compare !== 1;
+          });
 
-              if (compare === 1) {
-                return transaction;
-              } else {
-                added = true;
-                return created;
-              }
-            }),
-          ];
+          old.splice(idx, 0, created)
+
+          return old;
         }
       );
 
