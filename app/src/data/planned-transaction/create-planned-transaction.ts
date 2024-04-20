@@ -63,7 +63,7 @@ export function useCreatePlannedTransaction(monthlyRequest: MonthlyRequest) {
             return compare !== 1;
           });
 
-          old.splice(idx, 0, created)
+          old.splice(idx, 0, created);
 
           return old;
         }
