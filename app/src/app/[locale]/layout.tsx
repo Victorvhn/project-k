@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata, type Viewport } from 'next';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { Inter } from 'next/font/google';
@@ -267,6 +268,7 @@ export default async function RootLayout({
           inter.variable
         )}
       >
+        <SpeedInsights />
         <ServerProviders locale={locale} session={session}>
           <NextTopLoader />
           <Header />

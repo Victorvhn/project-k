@@ -14,6 +14,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
 } from '../ui/command';
 import { FormControl } from '../ui/form';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
@@ -96,24 +97,26 @@ export function CategoryCombo({
           <CommandInput placeholder={t('SearchMessage')} />
           <CommandEmpty>{t('EmptyMessage')}</CommandEmpty>
           <CommandGroup>
-            {categories.map((category) => (
-              <CommandItem
-                value={category.name}
-                key={category.id}
-                onSelect={() => {
-                  onChange(category.id === fieldValue ? null : category.id);
-                  setOpen(false);
-                }}
-              >
-                <Check
-                  className={cn(
-                    'mr-2 size-4',
-                    category.id === fieldValue ? 'opacity-100' : 'opacity-0'
-                  )}
-                />
-                {category.name}
-              </CommandItem>
-            ))}
+            <CommandList>
+              {categories.map((category) => (
+                <CommandItem
+                  value={category.name}
+                  key={category.id}
+                  onSelect={() => {
+                    onChange(category.id === fieldValue ? null : category.id);
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      'mr-2 size-4',
+                      category.id === fieldValue ? 'opacity-100' : 'opacity-0'
+                    )}
+                  />
+                  {category.name}
+                </CommandItem>
+              ))}
+            </CommandList>
           </CommandGroup>
         </Command>
       </PopoverContent>
