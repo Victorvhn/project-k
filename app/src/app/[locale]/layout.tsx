@@ -11,6 +11,7 @@ import { authOptions } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 import { ServerProviders } from '@/providers';
 import { locales } from '@/shared/supported-languages';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -267,6 +268,7 @@ export default async function RootLayout({
           inter.variable
         )}
       >
+        <SpeedInsights />
         <ServerProviders locale={locale} session={session}>
           <NextTopLoader />
           <Header />
