@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata, type Viewport } from 'next';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { Inter } from 'next/font/google';
@@ -11,7 +12,6 @@ import { authOptions } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 import { ServerProviders } from '@/providers';
 import { locales } from '@/shared/supported-languages';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
