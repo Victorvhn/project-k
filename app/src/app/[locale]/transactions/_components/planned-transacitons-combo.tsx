@@ -11,6 +11,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
 } from '@/components/ui/command';
 import { FormControl } from '@/components/ui/form';
 import {
@@ -86,27 +87,31 @@ export function PlannedTransactionsCombo({
           <CommandInput placeholder={t('SearchMessage')} />
           <CommandEmpty>{t('EmptyMessage')}</CommandEmpty>
           <CommandGroup>
-            {plannedTransactions.map((transaction) => (
-              <CommandItem
-                value={transaction.description}
-                key={transaction.id}
-                onSelect={() => {
-                  onChange(
-                    transaction.id === fieldValue ? null : transaction.id
-                  );
-                  setFormValue(transaction);
-                  setOpen(false);
-                }}
-              >
-                <Check
-                  className={cn(
-                    'mr-2 size-4',
-                    transaction.id === fieldValue ? 'opacity-100' : 'opacity-0'
-                  )}
-                />
-                {transaction.description}
-              </CommandItem>
-            ))}
+            <CommandList>
+              {plannedTransactions.map((transaction) => (
+                <CommandItem
+                  value={transaction.description}
+                  key={transaction.id}
+                  onSelect={() => {
+                    onChange(
+                      transaction.id === fieldValue ? null : transaction.id
+                    );
+                    setFormValue(transaction);
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      'mr-2 size-4',
+                      transaction.id === fieldValue
+                        ? 'opacity-100'
+                        : 'opacity-0'
+                    )}
+                  />
+                  {transaction.description}
+                </CommandItem>
+              ))}
+            </CommandList>
           </CommandGroup>
         </Command>
       </PopoverContent>
