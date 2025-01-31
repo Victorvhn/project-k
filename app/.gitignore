@@ -32,8 +32,8 @@ yarn-error.log*
 .env*.local
 
 # typescript
-*.tsbuildinfo
 next-env.d.ts
+*.tsbuildinfo
 
 # PWA files
 **/public/sw.js
